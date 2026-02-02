@@ -1079,3 +1079,68 @@ a {
         text-align: center;
     }
 }
+/* pages.css */
+.pages {
+    padding: 160px 0 100px;
+    /* Отступ под фиксированный хедер */
+    background: var(--bg-color);
+    min-height: 100vh;
+}
+
+.pages h1 {
+    font-size: 3rem;
+    color: var(--white);
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, var(--accent), #0077ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pages h2 {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin: 40px 0 20px;
+}
+
+.pages p {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.pages ul {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.pages li {
+    color: var(--text-dim);
+    margin-bottom: 12px;
+    position: relative;
+    list-style-type: none;
+    padding-left: 25px;
+}
+
+.pages li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.pages a {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .pages h1 {
+        font-size: 2.2rem;
+    }
+
+    .pages {
+        padding-top: 120px;
+    }
+}
