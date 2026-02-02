@@ -199,3 +199,40 @@ function showStatus(text, type) {
         formStatus.style.display = 'none';
     }, 5000);
 }
+// --- Мобильное меню ---
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+const navLinks = document.querySelectorAll('.nav__link');
+
+const toggleMenu = () => {
+    burger.classList.toggle('is-active');
+    nav.classList.toggle('is-active');
+    document.body.classList.toggle('no-scroll'); // Чтобы не скроллился контент под меню
+};
+
+burger.addEventListener('click', toggleMenu);
+
+// Закрытие при клике на ссылку
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (nav.classList.contains('is-active')) toggleMenu();
+    });
+});
+
+// --- Cookie Popup Logic ---
+const cookiePopup = document.getElementById('cookiePopup');
+const acceptBtn = document.getElementById('acceptCookies');
+
+window.addEventListener('load', () => {
+    // Проверяем, принимал ли пользователь куки ранее
+    if (!localStorage.getItem('cookiesAccepted')) {
+        setTimeout(() => {
+            cookiePopup.classList.add('is-visible');
+        }, 2000);
+    }
+});
+
+acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    cookiePopup.classList.remove('is-visible');
+});
