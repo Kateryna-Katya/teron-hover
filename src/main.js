@@ -110,3 +110,33 @@ if (typeof VanillaTilt !== 'undefined') {
         "max-glare": 0.2,
     });
 }
+const handleTimelineProgress = () => {
+    const timeline = document.querySelector('.timeline');
+    const progress = document.querySelector('.timeline__progress');
+    const items = document.querySelectorAll('.timeline__item');
+
+    if (!timeline || !progress) return;
+
+    const timelineRect = timeline.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // Рассчитываем, насколько далеко мы проскроллили таймлайн
+    let progressHeight = (windowHeight / 2 - timelineRect.top);
+    let totalHeight = timelineRect.height;
+
+    // Ограничиваем прогресс от 0 до 100%
+    let percent = Math.max(0, Math.min(100, (progressHeight / totalHeight) * 100));
+    progress.style.height = `${percent}%`;
+
+    // Активируем точки
+    items.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        if (itemTop < windowHeight / 2) {
+            item.classList.add('is-active');
+        } else {
+            item.classList.remove('is-active');
+        }
+    });
+};
+
+window.addEventListener('scroll', handleTimelineProgress);
