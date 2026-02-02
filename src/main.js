@@ -140,3 +140,62 @@ const handleTimelineProgress = () => {
 };
 
 window.addEventListener('scroll', handleTimelineProgress);
+// Генерация капчи
+let captchaResult;
+const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    captchaResult = num1 + num2;
+    const label = document.getElementById('captchaLabel');
+    if(label) label.innerText = `Решите пример: ${num1} + ${num2} = ?`;
+};
+
+generateCaptcha();
+
+// Обработка формы
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const phoneValue = document.getElementById('userPhone').value;
+        const captchaInput = parseInt(document.getElementById('captchaInput').value);
+        
+        // Валидация телефона (только цифры, +, -, пробелы)
+        const phoneRegex = /^[\d\s\+\-]+$/;
+        if (!phoneRegex.test(phoneValue)) {
+            showStatus('Ошибка: Некорректный формат телефона', 'error');
+            return;
+        }
+
+        // Проверка капчи
+        if (captchaInput !== captchaResult) {
+            showStatus('Ошибка: Неверный ответ капчи', 'error');
+            generateCaptcha();
+            return;
+        }
+
+        // Имитация AJAX
+        const submitBtn = contactForm.querySelector('button');
+        submitBtn.innerText = 'Отправка...';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            showStatus('Запрос успешно отправлен! Мы свяжемся с вами в ближайшее время.', 'success');
+            contactForm.reset();
+            submitBtn.innerText = 'Отправить запрос';
+            submitBtn.disabled = false;
+            generateCaptcha();
+        }, 1500);
+    });
+}
+
+function showStatus(text, type) {
+    formStatus.innerText = text;
+    formStatus.className = 'form-status ' + type;
+    setTimeout(() => {
+        formStatus.style.display = 'none';
+    }, 5000);
+}

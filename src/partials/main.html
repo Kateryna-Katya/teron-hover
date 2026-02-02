@@ -161,3 +161,129 @@
         </div>
     </div>
 </section>
+<section id="education" class="education">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Обучение</span>
+            <h2 class="section-title">Программы, применимые уже сегодня</h2>
+        </div>
+
+        <div class="course-grid">
+            <div class="course-card fade-up">
+                <div class="course-card__inner">
+                    <div class="course-card__front">
+                        <div class="course-icon"><i data-lucide="code-2"></i></div>
+                        <h3>Frontend Architecture</h3>
+                        <p>Создание масштабируемых интерфейсов на базе инноваций.</p>
+                        <span class="course-price">€ 499</span>
+                    </div>
+                    <div class="course-card__back">
+                        <h4>Чему вы научитесь:</h4>
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> React & Next.js Pro</li>
+                            <li><i data-lucide="check-circle"></i> Анимации GSAP/Three.js</li>
+                            <li><i data-lucide="check-circle"></i> Оптимизация Core Web Vitals</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--primary btn--small">Запросить доступ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card fade-up" style="animation-delay: 0.2s;">
+                <div class="course-card__inner">
+                    <div class="course-card__front">
+                        <div class="course-icon"><i data-lucide="brain-circuit"></i></div>
+                        <h3>AI & Data Science</h3>
+                        <p>AI-инструменты для решения реальных бизнес-задач.</p>
+                        <span class="course-price">€ 649</span>
+                    </div>
+                    <div class="course-card__back">
+                        <h4>Чему вы научитесь:</h4>
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> Python для Data Science</li>
+                            <li><i data-lucide="check-circle"></i> Обучение нейросетей</li>
+                            <li><i data-lucide="check-circle"></i> Работа с Big Data в ЕС</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--primary btn--small">Запросить доступ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card fade-up" style="animation-delay: 0.4s;">
+                <div class="course-card__inner">
+                    <div class="course-card__front">
+                        <div class="course-icon"><i data-lucide="terminal"></i></div>
+                        <h3>Cybersecurity</h3>
+                        <p>Защита цифровой инфраструктуры нового поколения.</p>
+                        <span class="course-price">€ 599</span>
+                    </div>
+                    <div class="course-card__back">
+                        <h4>Чему вы научитесь:</h4>
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> Этичный хакинг</li>
+                            <li><i data-lucide="check-circle"></i> Сетевая безопасность</li>
+                            <li><i data-lucide="check-circle"></i> Аудит инфраструктуры</li>
+                        </ul>
+                        <a href="#contact" class="btn btn--primary btn--small">Запросить доступ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="education__footer fade-up">
+            <p>Предложение активно только в странах ЕС. Детали уточняйте у консультантов.</p>
+        </div>
+    </div>
+</section>
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact__wrapper">
+            <div class="contact__info fade-up">
+                <span class="section-subtitle">Свяжитесь с нами</span>
+                <h2 class="section-title">Готовы изменить правила игры?</h2>
+                <p class="contact__text">
+                    Оставьте заявку на бесплатную консультацию. Наши эксперты помогут оценить перспективы вашего
+                    развития и подобрать программу.
+                </p>
+                <div class="contact__badge">
+                    <i data-lucide="info"></i>
+                    <span>Платформа уже доступна в Европе</span>
+                </div>
+            </div>
+
+            <div class="contact__form-container fade-up" style="animation-delay: 0.2s;">
+                <form id="contactForm" class="contact__form">
+                    <div class="form-group">
+                        <label for="userName">Ваше имя</label>
+                        <input type="text" id="userName" name="name" placeholder="Александр" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userEmail">Электронная почта</label>
+                        <input type="email" id="userEmail" name="email" placeholder="hello@teron-hover.life" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userPhone">Телефон</label>
+                        <input type="tel" id="userPhone" name="phone" placeholder="+33 1 00 00 00 00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label id="captchaLabel">Решите пример: 5 + 3 = ?</label>
+                        <input type="number" id="captchaInput" placeholder="Ваш ответ" required>
+                    </div>
+
+                    <label class="checkbox-container">
+                        <input type="checkbox" required checked>
+                        <span class="checkmark"></span>
+                        Я согласен с <a href="./personal-data-policy.html">политикой конфиденциальности</a>
+                    </label>
+
+                    <button type="submit" class="btn btn--primary btn--full">Отправить запрос</button>
+
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
