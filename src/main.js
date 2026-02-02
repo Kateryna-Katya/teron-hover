@@ -101,3 +101,12 @@ document.querySelectorAll('.fade-up').forEach(el => {
     el.style.transition = "all 0.6s cubic-bezier(0.23, 1, 0.32, 1)";
     observer.observe(el);
 });
+// Инициализация Vanilla Tilt для карточек
+if (typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll(".glass-card"), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2,
+    });
+}
